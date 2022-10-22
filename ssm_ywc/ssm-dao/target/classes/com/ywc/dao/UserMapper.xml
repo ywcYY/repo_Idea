@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ywc.dao.UserMapper">
+    <select id="findAllUserPage" parameterType="com.ywc.domain.UserVo" resultType="com.ywc.domain.User">
+            select * from user
+            <where>
+                <if test="true">
+                    and is_del !=1
+                </if >
+                <if test="username!=null and username != ''">
+
+                and name =#{username}
+
+
+                </if>
+                <if test="startCreateTime != null and endCreateTime !=null">
+                and create_time BETWEEN #{startCreateTime} AND #{endCreateTime}
+
+
+                </if>
+
+            </where>
+
+
+
+
+    </select>
+
+    <!--根据用户名查询用户-->
+
+
+    <select id="login" parameterType="com.ywc.domain.User" resultType="com.ywc.domain.User">
+        select * from user where phone=#{phone}
+    </select>
+
+
+
+    <!--根据UserId清空中间表关系-->
+    <delete id="deleteUserContextRole" parameterType="int">
+delete from user_role_relation where user_id=#{userid}
+    </delete>
+    <!--分配角色-->
+    <insert id="userContextRole" parameterType="com.ywc.domain.User_Role_relation">
+        insert into user_role_relation values(null,#{userId},#{roleId},#{createdTime},#{updatedTime},#{createdBy},#{updatedby})
+
+    </insert>
+
+    
+
+</mapper>
