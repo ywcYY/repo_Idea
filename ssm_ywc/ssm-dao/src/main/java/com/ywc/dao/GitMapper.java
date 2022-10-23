@@ -4,6 +4,9 @@ public interface GitMapper {
 
     //123
   public void add();
+  
+  
+   public String ywc = null;
 
 
 
