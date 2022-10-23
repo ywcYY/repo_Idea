@@ -28,5 +28,6 @@ public List<User> findAllUserPage(UserVo userVo);
 
     /*分配角色*/
     public void userContextRole(User_Role_relation user_role_relation);
+    public void userContextRole2(User_Role_relation user_role_relation);
 
 }
