@@ -8,6 +8,8 @@ public interface GitMapper {
   
    public String ywc = null;
 
+   public void textGit();
+
 
 
 
