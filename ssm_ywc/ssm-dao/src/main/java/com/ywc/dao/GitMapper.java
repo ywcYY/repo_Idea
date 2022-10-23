@@ -14,4 +14,12 @@ public interface GitMapper {
 
 
 
+
+
+
+
+
+
+   public void test2();
+
 }
