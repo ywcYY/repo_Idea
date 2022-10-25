@@ -1,0 +1,11 @@
+server:
+  port: 9000   #在微服务集群环境中，通常会为每一个微服务叠加。
+
+spring:
+  application:
+    name: ywc-service-product #在微服务中的唯一标识  最好与项目名保持一致
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ywc_lagou?UseUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123789
